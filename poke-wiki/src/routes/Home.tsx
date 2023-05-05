@@ -17,7 +17,7 @@ export default function Home() {
   //If the scroll is at the end of the page, load more characters
   useEffect(() => {
     window.onscroll = () => {
-      if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+      if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.offsetHeight) {
         setOffset(offset + 20);
       }
     };
@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className='w-full bg-gray-900'>
       <Header />
-      <div className='grid grid-cols-4 gap-4 w-3/4 mx-auto pt-6 pb-2 pl-10'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-3/4 mx-auto pt-6 pb-2'>
         {characters.map((character: any) => {
           return <Card key={character.name} data={character} />;
         })}
