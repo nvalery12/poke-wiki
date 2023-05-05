@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loader-circle-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid transparent;
+  border-top: 5px solid #ffd523;
+  border-right: 5px solid #ffd523;
+  border-radius: 100%;
+  border-width: 3px;
+}
+.spinner_top {
+  animation: spinnerOne 3s linear infinite;
+  height: 70px;
+  width: 70px;
+}
+.spinner_mid {
+  animation: spinnerOne 5s linear infinite;
+  height: 47px;
+  width: 47px;
+}
+.spinner_bot {
+  animation: spinnerOne 5s linear infinite;
+  height: 24px;
+  width: 24px;
+}
+@keyframes spinnerOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

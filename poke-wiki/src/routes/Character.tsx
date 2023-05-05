@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/header';
 import { useEffect, useState } from 'react';
 import { apiService } from '../components/api/apiService';
+import Loader from '../components/loader';
 
 export default function Character() {
   const { characterid } = useParams();
@@ -28,7 +29,7 @@ export default function Character() {
   }
 
   if (!character) {
-    return <h1>Loading...</h1>;
+    return <Loader/>;
   }
 
   return (

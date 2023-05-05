@@ -34,7 +34,7 @@ export default function Header() {
             }}
           />
           <button
-            className='bg-white rounded-full absolute right-[8px] top-[1.5px]'
+            className='bg-white rounded-full absolute right-[8px] lg:right-[26px] top-[1.5px]'
             onClick={handleSubmit}
           >
             <svg

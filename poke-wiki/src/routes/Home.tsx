@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { apiService } from '../components/api/apiService';
 import Card from '../components/cards/card';
 import Header from '../components/header';
+import Loader from '../components/loader';
 
 export default function Home() {
   const [characters, updateCharacters] = useState([] as any);
@@ -24,7 +25,7 @@ export default function Home() {
   });
 
   if (characters.length === 0) {
-    return <h1>Loading...</h1>;
+    return <Loader />;
   }
 
   function handleClick() {
