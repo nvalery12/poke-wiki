@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     window.onscroll = () => {
       if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
-        setOffset(offset + 28);
+        setOffset(offset + 20);
       }
     };
   });
@@ -31,7 +31,7 @@ export default function Home() {
     setOffset(offset + 28);
   }
   return (
-    <div className='w-full'>
+    <div className='w-full bg-gray-900'>
       <Header />
       <div className='grid grid-cols-4 gap-4 w-3/4 mx-auto pt-6 pb-2 pl-10'>
         {characters.map((character: any) => {

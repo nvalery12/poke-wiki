@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'poke-pattern': "url('/images/wallpaper.jpg')",
+      }
+    },
   },
   plugins: [],
 }
