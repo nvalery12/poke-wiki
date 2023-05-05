@@ -32,7 +32,7 @@ export default function Character() {
   }
 
   return (
-    <div className='w-full bg-slate-100 h-screen'>
+    <div className='w-full bg-gray-900 h-screen'>
       <Header />
       <div className='px-8 w-full'>
         <section className='shadow-2xl bg-white w-96 mx-auto rounded-2xl pb-2'>
@@ -46,7 +46,7 @@ export default function Character() {
           </div>
           <h1 className='capitalize text-center font-black'>{character.species.name}</h1>
         </section>
-        <hr className='my-5' />
+        <hr className='my-5 w-96 mx-auto' />
         <section className='w-96 mx-auto shadow-2xl px-4 rounded-lg pb-10 bg-gray-100 pt-3 mt-1'>
           <h1 className='mt-8 pb-5 text-center font-black'>Abilities</h1>
           <div className='grid grid-cols-2 gap-4 w-3/4 mx-auto pt-6 pb-2 pl-10'>
