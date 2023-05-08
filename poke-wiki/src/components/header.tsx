@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const [id, setId] = useState('');
+  const navigate = useNavigate();
 
-  function handleSubmit(e: any) {
-    e.preventDefault();
+  function handleSubmit() {
     if (id !== '') {
-      window.location.href = `/character/${id.toLowerCase()}`;
+      navigate(`/character/${id.toLowerCase()}`);
     }
   }
 
@@ -27,7 +27,7 @@ export default function Header() {
             onInput={(e: any) => {
               setId(e.target.value);
             }}
-            onKeyDown={(e: any) => {
+            onKeyDown={(e) => {
               if (e.key === 'Enter') {
                 handleSubmit(e);
               }
