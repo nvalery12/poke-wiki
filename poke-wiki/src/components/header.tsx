@@ -24,12 +24,12 @@ export default function Header() {
             placeholder='Type id or name'
             className='rounded-2xl pl-3 border-black border-2'
             value={id}
-            onInput={(e: any) => {
-              setId(e.target.value);
+            onInput={(e) => {
+              setId(e.currentTarget.value);
             }}
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
-                handleSubmit(e);
+                handleSubmit();
               }
             }}
           />
