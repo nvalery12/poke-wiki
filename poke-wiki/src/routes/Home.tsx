@@ -1,48 +1,33 @@
-import { useEffect, useState } from 'react';
-import { apiService } from '../components/api/apiService';
 import Card from '../components/cards/card';
 import Header from '../components/header';
 import Loader from '../components/loader';
+import { useCharacter } from '../assets/hooks/useCharacter';
+import { useEffect } from 'react';
+import type { Character } from '../assets/hooks/useCharacter';
 
 export default function Home() {
-  const [characters, updateCharacters] = useState([] as any);
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    (async () => {
-      const data = await apiService(offset);
-      updateCharacters([...characters, ...data.results]);
-    })();
-  }, [offset]);
+  const { characters,nextPage, isLoading } = useCharacter();
 
   //If the scroll is at the end of the page, load more characters
   useEffect(() => {
     window.onscroll = () => {
       if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.offsetHeight) {
-        setOffset(offset + 20);
+        nextPage();
       }
     };
   });
 
-  if (characters.length === 0) {
+  if (isLoading) {
     return <Loader />;
   }
 
-  function handleClick() {
-    setOffset(offset + 28);
-  }
   return (
     <div className='w-full bg-gray-900'>
       <Header />
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-3/4 mx-auto pt-6 pb-2'>
-        {characters.map((character: any) => {
+        {characters.map((character: Character) => {
           return <Card key={character.name} data={character} />;
         })}
-      </div>
-      <div className='w-52 mx-auto py-5'>
-        <button onClick={handleClick} className='py-3 px-2 bg-blue-700 shadow-2xl rounded-sm w-52'>
-          Load more
-        </button>
       </div>
     </div>
   );
