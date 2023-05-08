@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import Header from '../components/header';
 import Loader from '../components/loader';
-import { useCharacterCard } from '../assets/hooks/useCharacterCard';
-import type { Ability, Type } from '../assets/hooks/useCharacterCard';
+import { useCharacterCard } from '../hooks/useCharacterCard';
+import type { Ability, Type } from '../hooks/useCharacterCard';
 import setColor from '../components/api/color';
 
 export default function Character() {

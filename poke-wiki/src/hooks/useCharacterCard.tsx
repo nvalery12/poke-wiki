@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { apiService } from '../../components/api/apiService';
+import { apiService } from '../components/api/apiService';
 
 interface Sprites {
   front_default: string;

@@ -1,14 +1,13 @@
 import Card from '../components/cards/card';
 import Header from '../components/header';
 import Loader from '../components/loader';
-import { useCharacter } from '../assets/hooks/useCharacter';
+import { useCharacter } from '../hooks/useCharacter';
 import { useEffect } from 'react';
-import type { Character } from '../assets/hooks/useCharacter';
+import type { Character } from '../hooks/useCharacter';
 
 export default function Home() {
   const { characters,nextPage, isLoading } = useCharacter();
 
-  //If the scroll is at the end of the page, load more characters
   useEffect(() => {
     window.onscroll = () => {
       if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.offsetHeight) {

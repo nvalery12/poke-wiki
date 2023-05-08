@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { apiService } from '../../components/api/apiService';
+import { apiService } from '../components/api/apiService';
 
 
 export interface Character {
@@ -19,8 +19,8 @@ export function useCharacter() {
   useEffect(() => {
       const sideEffect = async () => {
       setIsLoading(true);
-      const data = await apiService(offset);
-      addCharacter(data.results);
+      const {results} = await apiService(offset);
+      addCharacter(results);
       setIsLoading(false);
     }
     sideEffect();

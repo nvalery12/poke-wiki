@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useCharacterCard } from '../../assets/hooks/useCharacterCard';
+import { useCharacterCard } from '../../hooks/useCharacterCard';
 
 interface Data {
     name: string;
