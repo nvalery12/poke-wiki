@@ -26,7 +26,7 @@ export default function Home() {
       <Header />
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-3/4 mx-auto pt-6 pb-2'>
         {characters.map((character: Character) => {
-          return <Card key={character.name} data={character} />;
+          return <Card key={character.name} {...character} />;
         })}
       </div>
     </div>
