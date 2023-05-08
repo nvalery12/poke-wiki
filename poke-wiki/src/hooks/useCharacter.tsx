@@ -18,7 +18,7 @@ export function useCharacter() {
 
   useEffect(() => {
       const sideEffect = async () => {
-      setIsLoading(true);
+      if(offset === 0) setIsLoading(true);
       const {results} = await apiService(offset);
       addCharacter(results);
       setIsLoading(false);
