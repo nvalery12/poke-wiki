@@ -28,6 +28,9 @@ export default function Home() {
           return <Card key={character.name} {...character} />;
         })}
       </div>
+      <div className='text-center bg-slate-100 rounded-xl w-28 mx-auto mt-5'>
+        <p>Loading...</p>
+      </div>
     </div>
   );
 }
